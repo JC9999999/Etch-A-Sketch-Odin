@@ -1,6 +1,6 @@
 #container {
-    width: 100vw;  /* 100% of viewport width */
-    height: 100vh; /* 100% of viewport height */
+    width: 640px;  /* 100% of viewport width */
+    height: 640px; /* 100% of viewport height */
     display: flex;
     flex-wrap: wrap;
 }
@@ -8,6 +8,6 @@
 .square-grid {
     box-sizing: border-box;
     border: 1px solid red;
-    width: calc(100vw / 16);    /* Divide viewport width by 16 */
-    height: calc(100vh / 16);   /* Divide viewport height by 16 */
+    width: 40px;    /* Divide viewport width by 16 */
+    height: 40px;   /* Divide viewport height by 16 */
 }
