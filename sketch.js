@@ -11,21 +11,37 @@ function generateRandomColor(){
     return randomHexColor;
 }
 
-button.addEventListener("click" , function(){
-    let gridSize = prompt("Pick a grid size");    
-})
-
-for(let row = 0 ; row < 16 ; row++){
-    for(let column = 0 ; column < 16 ; column++ ){
-        const squareGrid = document.createElement("div");
-        squareGrid.classList.add("square-grid");
-        container.appendChild(squareGrid);
-        squareGrid.addEventListener("mouseenter", function(){
+function resetGrid(input){
+    document.querySelectorAll(".square-grid").forEach(square => square.remove());
+    let newSize = 640/input;
+    for(let row = 0; row < input; row++){
+        for(let column = 0; column < input ; column++){
+            const squareGrid = document.createElement("div");
+            squareGrid.classList.add("square-grid");
+            squareGrid.style.width = newSize + "px";
+            squareGrid.style.height = newSize + "px";
+            container.insertAdjacentElement("beforeend" , squareGrid);
+            squareGrid.addEventListener("mouseenter", function(){
             squareGrid.style.backgroundColor = generateRandomColor();
-        })
-
+            })
+        }
+        
+    }
+    
+}
+button.addEventListener("click" , function(){
+    let gridSize = prompt("Pick a grid size");
+    changeSize(gridSize);
+})
+function changeSize(input){
+    if(input >= 2 && input <= 100){
+        resetGrid(input);
+    }
+    else{
+        alert("Too many squares");
     }
 }
-    
+
+resetGrid(16);
 
     

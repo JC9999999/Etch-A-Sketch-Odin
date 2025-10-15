@@ -12,10 +12,3 @@ body{
     flex-wrap: wrap;
 }
 
-.square-grid {
-    display: flex;
-    box-sizing: border-box;
-    border: 1px solid black;
-    width: 40px;    
-    height: 40px;
-}
